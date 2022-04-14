@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Search } from 'src/app/interface/omdb.interface';
 import { OmdbService } from 'src/app/omdb.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-nav',
@@ -23,8 +22,9 @@ export class NavComponent implements OnInit {
     const value = this.caja.nativeElement.value;
 
     this.omdb.getTitle(value);
+    this.caja.nativeElement.value = this.caja.nativeElement.value=''
 
-    this.caja.nativeElement.value = '';
+    
   }
 
   busqueda(item:any){
@@ -34,6 +34,7 @@ export class NavComponent implements OnInit {
 
   delete(){
      localStorage.removeItem('historial')
+     window.location.reload()
     
 
   }

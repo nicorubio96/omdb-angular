@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { ResultComponent } from './result/result.component';
 import { InputComponent } from '../input/input.component';
+import { DetailComponent } from '../detail/detail.component';
+import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -10,15 +13,21 @@ import { InputComponent } from '../input/input.component';
   declarations: [
     NavComponent,
     ResultComponent,
-    InputComponent
+    InputComponent,
+    DetailComponent
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    AppRoutingModule
+    
     
   ],exports:[
     NavComponent,
     ResultComponent,
-    InputComponent
+    InputComponent,
+    DetailComponent,
+    FormsModule
   ]
 })
 export class SharedModule { }

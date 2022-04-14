@@ -1,2 +1,20 @@
-<input class="form-control me-2" type="text" placeholder="Search" aria-label="Search " #caja >
-<button class="btn btn-outline-success" type="button" (click)="newEnviar(caja.value)">Search</button>
+<div class="card-body ">
+  <div class="input-group ">
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Ingrese pelicula..."
+      aria-label="Enter search term..."
+      aria-describedby="button-search"
+      #caja
+    />
+    <button
+      class="btn btn-primary"
+      id="button-search"
+      type="button"
+      (click)="newEnviar(caja.value)"
+    >
+      Buscar
+    </button>
+  </div>
+</div>

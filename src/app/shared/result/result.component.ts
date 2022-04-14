@@ -12,7 +12,7 @@ export class ResultComponent implements OnInit {
 
   ngOnInit(): void {
    
-    this.omdb.getId()
+    this.omdb.getId("tt1695366")
   }
 
   get movies(){

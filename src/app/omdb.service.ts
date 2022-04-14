@@ -6,8 +6,8 @@ import { Omdb, Search } from './interface/omdb.interface';
   providedIn: 'root',
 })
 export class OmdbService {
-  private url: string = 'http://www.omdbapi.com/?apikey=94249fbc&i=';
-  private urlId: string = 'http://www.omdbapi.com/?apikey=94249fbc&i= tt0120338';
+  private url: string = 'http://www.omdbapi.com/?apikey=94249fbc&';
+  private urlId: string = 'http://www.omdbapi.com/?apikey=94249fbc&';
  
   public _historial: string[] = [];
   public movies: Search[] = [];
@@ -15,9 +15,14 @@ export class OmdbService {
   constructor(private omdb: HttpClient) {
     this._historial = JSON.parse(localStorage.getItem('historial')!) || [];
   }
+  
 
   get historial() {
     return [...this._historial];
+  }
+
+  get films(){
+    return [...this.film]
   }
 
   getTitle(title: string) {
@@ -36,8 +41,8 @@ export class OmdbService {
     console.log(this.movies);
   }
 
-  getId(){
-    this.omdb.get<any>(this.urlId)
+  getId(id:string){
+    this.omdb.get<any>(this.url +`i=${id}`) 
  
     .subscribe(res=>{
      let  filmDetail = JSON.parse(JSON.stringify(res))

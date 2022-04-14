@@ -1,14 +1,12 @@
 <div class="row">
-
-    
-
   <div class="col" *ngFor="let item of movies">
     <div class="card" style="width: 18rem">
-      <img [src]="item.Poster" class="card-img-top" alt="..." />
+      <img [src]="item.Poster" class="img-responsive" alt="Responsive image" />
       <div class="card-body">
-        <h5 class="card-title">{{ item.Title }}</h5>
-      
-        <a href="#" class="btn btn-primary">Ver Detalles</a>
+
+        <a [routerLink]="['/pelicula', item.imdbID]" class="btn btn-primary"
+          >Ver Detalles</a
+        >
       </div>
     </div>
   </div>

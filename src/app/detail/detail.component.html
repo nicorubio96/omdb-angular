@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-8">
+      <!-- Post content-->
+      <article>
+        <!-- Post header-->
+        <header class="mb-4">
+          <!-- Post title-->
+          <h1 class="fw-bolder mb-1">{{ films.Title }}</h1>
+          <!-- Post meta content-->
+          <div class="text-muted fst-italic mb-2">{{ films.Released }}</div>
+          <!-- Post categories-->
+          <p class="badge bg-secondary text-decoration-none link-light">
+            {{ films.Genre }}
+          </p>
+        </header>
+        <!-- Preview image figure-->
+        <figure class="mb-4">
+          <img class="img-fluid rounded" [src]="films.Poster" alt="..." />
+        </figure>
+        <!-- Post content-->
+      </article>
+      <!-- Comments section-->
+    </div>
+    <!-- Side widgets-->
+    <div class="col-lg-4">
+      <!-- Search widget-->
+
+      <!-- Categories widget-->
+      <div class="card mb-4">
+        <div class="card-header">Detalles</div>
+        <div class="card-body">
+          <div class="row">
+         <!--    <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li>Director :</li>
+                <li>Escritor :</li>
+                <li>Duración :</li>
+              </ul>
+            </div> -->
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li> Director : {{films.Director}}</li>
+                <li> Escritor: {{films.Writer}}</li>
+                <li> duracion :{{ films.Runtime }}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Side widget-->
+      <div class="card mb-4">
+        <div class="card-header">Trama</div>
+        <div class="card-body">{{ films.Plot }}</div>
+      </div>
+    </div>
+  </div>
+</div>
